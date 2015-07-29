@@ -8,3 +8,6 @@ Problems Solved.
 <img src="http://i.imgur.com/Zgeadd1.png" title="source: imgur.com" />
 Status : Completed. 
 If investments starts becoming unprofitable with growing exchange rates, the color of the rate starts changing from Green (profit) to Red (Loss)
+
+
+2) Working on : Stock watch and profit tracker. Set margins of profit that you need to book on a stock and the tool wil alert you when that margin is available. 
