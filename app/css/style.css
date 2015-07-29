@@ -1,0 +1,65 @@
+.title{
+  text-align:center;
+  opacity : 0.5;
+  font-size : 4em;
+  letter-spacing: 0.05em;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 1em;
+}
+
+.ip{
+  width: 35em;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.form-group{
+  text-align: left;
+  padding: 0.3em;
+  font-size: 1.2em;
+}
+
+.report{
+  width: 40em;
+  border: 1px solid #adadad;
+  border-radius: 5px;
+  font-family: 'Open Sans', sans-serif;
+  color: #5e5e5e;
+  padding: 1em;
+}
+
+.reportcash{
+  width: 40em;
+  border: 1px solid #adadad;
+  border-radius: 5px;
+  font-family: 'Open Sans', sans-serif;
+  color: #5e5e5e;
+  padding: 1em;
+  margin : 0 auto;
+  text-align: center;
+}
+.profit{
+  color: green;
+  text-align:center;
+  font-size: 5em;
+}
+
+.loss{
+  color: red;
+  text-align:center;
+  font-size : 5em;
+}
+
+.dt{
+  text-align:center;
+}
+
+.btn{
+  margin-left: 0.2em;
+  float: right;
+}
+
+.stockform{
+  margin-top: 0.5em;
+  margin-left: 0.5em;
+}

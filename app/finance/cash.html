@@ -1,0 +1,18 @@
+<h2 class="title"> Cashed Out Fixed Dashboard</h2>
+<div class="row">
+<div class="col-md-12">
+  <div class = "reportcash" ng-repeat="deposit in cashed">
+    <div class="row">
+      <h3 class="dt"> Cashed Out Fixed Deposit {{$index + 1}}</h3>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <p> Amount you invested : <b>{{deposit.netamount | currency}}</b></p>
+        <p> Investing Rate : <b>{{deposit.cdr}} INR to {{1 | currency}}</b></p>
+        <p> Selling Rate : <b>{{deposit.rateofcashinr}} INR to {{1 | currency}} </b></p>
+        <p>Date of Deposit : {{deposit.date | date}}</p>
+        <p>Date of Encashment : {{deposit.encashdate | date}}</p>
+      </div>
+    </div>
+  </div>
+</div>

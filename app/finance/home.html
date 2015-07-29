@@ -1,0 +1,64 @@
+<h2 class="title"> Personal Fixed Deposit Dashboard</h2>
+
+<div class="row">
+  <div class="col-md-6">
+    <form ng-submit="setDeposit()" class="ip">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Dollar Amount to Invest</label>
+          <input  class="form-control" type="number" ng-model="prin" placeholder = "Dollar amount" required/>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Rate of Interest Indian Bank(%)</label>
+          <input  class="form-control" type="number" step="any" ng-model="int" placeholder = "Rate of Interest" required/>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputFile">Current Rate of INR vs USD</label>
+          <input class="form-control" type="number" step="any" ng-model="cdr" placeholder = "Current indian Rupee Rate" required/>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Number of Years</label>
+          <input  class="form-control" type="number" step="any" ng-model="years" placeholder="Number of Years Invested" required/>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Rate of Interest in US Bank (%)</label>
+          <input  class="form-control" type="number" step="any" ng-model="thresh" placeholder="Interest Threshold for US (in %)" required/>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Transfer Charge from US to India</label>
+          <input  class="form-control" type="number" step="any" ng-model="tus" placeholder="Transfer Charge from US to India" required/>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Transfer Charge from India to US</label>
+          <input  class="form-control" type="number" step="any" ng-model="tin" placeholder="Transfer Charge from India to US" required/>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Date of Deposit</label>
+          <input  class="form-control" type="date"  ng-model="date" required/>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+  </div>
+  <div class="col-md-6">
+    <div class = "report" ng-repeat="deposit in fdeposit">
+      <div class="row">
+        <h3 class="dt"> Fixed Deposit {{$index + 1}}</h3>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p> Amount you invested : <b>{{deposit.netamount | currency}}</b></p>
+          <p> Sending Rate : <b>{{deposit.cdr}} INR to {{1 | currency}}</b></p>
+          <p> Amount you would have earned in the US : <b>{{deposit.amrpot | currency}} </b></p>
+          <p>(Includes Transfer Charges from US to India and Back)</p>
+          <p>Date of Deposit : {{deposit.date | date}}</p>
+        </div>
+        <div class="col-md-6">
+          <p>To make a profit the INR needs to be below</p>
+          <h1 ng-if="cdr <= deposit.limitinr" class="profit">{{deposit.limitinr | number}}</h1>
+          <h1 ng-if="cdr > deposit.limitinr" class="loss">{{deposit.limitinr | number}}</h1>
+          <button type="button" class="btn btn-primary" ng-click="enCash($index)">Cash Out</button>
+          <button type="button" class="btn btn-danger" ng-click="deleteEntry($index)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
